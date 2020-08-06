@@ -1,0 +1,10 @@
+<mat-form-field class="full-width">
+  <mat-label>Email</mat-label>
+  <input matInput [required]="required" [formControl]="email" (ngModelChange)="emailChange()">
+  <mat-error *ngIf="email.hasError('required')">
+    Обязательно для заполнения
+  </mat-error>
+  <mat-error *ngIf="email.hasError('email')">
+    Не корректный email адрес
+  </mat-error>
+</mat-form-field>

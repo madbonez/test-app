@@ -1,0 +1,8 @@
+<mat-hint [ngClass]="{'selected': touched}">Колличество детей </mat-hint>
+<div class="counter-container">
+  <button mat-ripple color="default" type="button" (click)="changeCounter('minus')">-</button>
+  <span class="counter">
+    {{ childrenCount.value }}
+  </span>
+  <button mat-ripple color="default" type="button" (click)="changeCounter('plus')">+</button>
+</div>

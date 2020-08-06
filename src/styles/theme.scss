@@ -1,0 +1,7 @@
+@import './variables';
+
+@include mat-core();
+
+// Include theme styles for Angular Material components.
+@include angular-material-theme($theme);
+

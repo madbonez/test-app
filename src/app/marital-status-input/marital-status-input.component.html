@@ -1,0 +1,11 @@
+<mat-form-field appearance="standard" class="full-width">
+  <mat-label>Семейное положение</mat-label>
+  <mat-select [formControl]="status" [required]="required" (ngModelChange)="onStatusChange()">
+    <mat-option *ngFor="let status of statuses" [value]="status.value">
+      {{status.viewValue}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="status.hasError('required')">
+    Обязательно для заплнения
+  </mat-error>
+</mat-form-field>

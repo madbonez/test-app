@@ -1,0 +1,12 @@
+<mat-hint [ngClass]="{'warn': isValid(), 'selected': !!genderValue.value}">
+  Пол <span *ngIf="required">*</span>
+</mat-hint>
+<mat-radio-group  [formControl]="genderValue" (ngModelChange)="onSelect()" [ngClass]="{'warn': isValid()}">
+  <mat-radio-button value="male">Мужской</mat-radio-button>
+  <mat-radio-button value="female">Женский</mat-radio-button>
+</mat-radio-group>
+
+
+<mat-error *ngIf="isValid()" @slideUpDown>
+  Обязательно для заплнения
+</mat-error>

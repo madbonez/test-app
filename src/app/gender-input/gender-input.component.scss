@@ -1,0 +1,32 @@
+@import 'src/styles/variables';
+
+:host {
+  display: block;
+}
+
+mat-radio-group {
+  margin-top: 10px;
+  height: 20px;
+  display: block;
+}
+
+mat-radio-button {
+  margin-right: 16px;
+}
+
+mat-label {
+  margin-right: 16px;
+}
+
+.warn {
+  color: map-get($warn, default);
+}
+
+mat-error {
+  font-size: 75%;
+}
+
+.selected {
+  font-size: 75%;
+}
+

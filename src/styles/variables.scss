@@ -1,0 +1,17 @@
+@import '~@angular/material/_theming.scss';
+
+$primary: mat-palette($mat-blue, 800, 500, 900);
+$accent:  mat-palette($mat-blue, A200, A100, A400);
+$warn: mat-palette($mat-red);
+
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+$border-color: mat-color($theme, A200);
+
+
+//$custom-colors: (
+//  custom-color-a: mat-color($mat-green, 700),
+//  custom-color-b: mat-color($mat-red, 400),
+//);
+//$theme: map-merge($theme, (custom-colors: $custom-colors));

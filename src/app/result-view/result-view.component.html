@@ -1,0 +1,20 @@
+<mat-card>
+  <h2>Результат</h2>
+  <mat-card-content>
+    <p>ФИО: <small>{{(cvData$| async)?.fio || 'не задано'}}</small></p>
+    <p>День рождения: <small>{{((cvData$| async)?.birthday | date) || 'не задано'}}</small></p>
+    <p>
+      Пол:
+      <small>
+        {{
+          ((cvData$| async)?.gender === 'male' ? 'мужской' : 'женский') || 'не задано'
+        }}
+      </small>
+    </p>
+    <p>Количество детей: <small>{{(cvData$| async)?.childrenCount || 'не задано'}}</small></p>
+    <p>Email: <small>{{(cvData$| async)?.email || 'не задано'}}</small></p>
+    <p>Семейное положение: <small>{{maritalDict.getViewValue((cvData$| async)?.maritalStatus)}}</small></p>
+    <p>Коментарии: <small>{{(cvData$| async)?.comments || 'не задано'}}</small></p>
+  </mat-card-content>
+</mat-card>
+

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  width: 600px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  & > * {
+    margin-top: 15px;
+  }
+}

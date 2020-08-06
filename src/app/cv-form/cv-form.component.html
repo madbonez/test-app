@@ -1,0 +1,33 @@
+
+<form (ngSubmit)="onSubmit()" [formGroup]="cvForm">
+  <mat-card>
+    <h1>Резюме</h1>
+    <mat-card-content>
+
+      <app-fio-input [required]="true" formControlName="fio"></app-fio-input>
+
+      <app-gender-input [required]="true" formControlName="gender"></app-gender-input>
+
+      <app-birthday-input [required]="true"  formControlName="birthday"></app-birthday-input>
+
+      <app-marital-status-input *ngIf="isAdult"
+                                formControlName="maritalStatus"
+                                [gender]="cvForm.get('gender').value" [required]="true"></app-marital-status-input>
+
+      <app-children-count-input formControlName="childrenCount"></app-children-count-input>
+
+      <app-email-input [required]="true"  formControlName="email"></app-email-input>
+
+      <app-comments-input formControlName="comments"></app-comments-input>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button
+              [disabled]="submitButtonDisabled$ | async"
+              color="primary"
+              type="submit">Сохранить</button>
+    </mat-card-actions>
+  </mat-card>
+
+</form>
+

@@ -1,0 +1,13 @@
+<mat-form-field class="full-width">
+  <mat-label>ФИО</mat-label>
+  <input matInput [required]="required" [formControl]="fio" (input)="onInput()" [errorStateMatcher]="matcher">
+  <mat-error *ngIf="fio.hasError('notCyrillic')">
+    Только русские символы
+  </mat-error>
+  <mat-error *ngIf="fio.hasError('wordsCountError')">
+    Фамилия и имя обязательны
+  </mat-error>
+  <mat-error *ngIf="fio.hasError('required')">
+    Обязательно для заплнения
+  </mat-error>
+</mat-form-field>

@@ -1,0 +1,7 @@
+<mat-form-field class="full-width">
+  <mat-label>Коментарий</mat-label>
+  <textarea matInput [formControl]="comments" (input)="onCommentsChange()" [errorStateMatcher]="matcher" (focusout)="focusOut()"></textarea>
+  <mat-error *ngIf="comments.hasError('notCyrillic')">
+    Только русские символы
+  </mat-error>
+</mat-form-field>

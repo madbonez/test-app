@@ -1,0 +1,9 @@
+<mat-form-field appearance="standard" class="full-width">
+  <mat-label>Дата рождения</mat-label>
+  <input matInput [matDatepicker]="picker" [formControl]="birthday" [required]="required" (ngModelChange)="onSelect()">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker touchUi #picker></mat-datepicker>
+  <mat-error *ngIf="birthday.hasError('required')">
+    Обязательно для заполнения
+  </mat-error>
+</mat-form-field>
